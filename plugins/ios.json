@@ -1,0 +1,52 @@
+{
+    "prepare_queue": {
+        "installed": [],
+        "uninstalled": []
+    },
+    "config_munge": {
+        "files": {}
+    },
+    "installed_plugins": {
+        "com.megster.cordova.FileChooser": {
+            "PACKAGE_NAME": "com.kerryrichardson.mvplocal"
+        },
+        "com.xmartlabs.cordova.market": {
+            "PACKAGE_NAME": "com.kerryrichardson.mvplocal"
+        },
+        "cordova-plugin-device": {
+            "PACKAGE_NAME": "com.kerryrichardson.mvplocal"
+        },
+        "cordova-plugin-file": {
+            "PACKAGE_NAME": "com.kerryrichardson.mvplocal"
+        },
+        "cordova-plugin-request-location-accuracy": {
+            "PACKAGE_NAME": "com.kerryrichardson.mvplocal"
+        },
+        "cordova-plugin-splashscreen": {
+            "PACKAGE_NAME": "com.kerryrichardson.mvplocal"
+        },
+        "cordova-plugin-whitelist": {
+            "PACKAGE_NAME": "com.kerryrichardson.mvplocal"
+        },
+        "cordova-plugin-x-socialsharing": {
+            "PACKAGE_NAME": "com.kerryrichardson.mvplocal"
+        },
+        "cordova.plugins.diagnostic": {
+            "PACKAGE_NAME": "com.kerryrichardson.mvplocal"
+        },
+        "uk.co.whiteoctober.cordova.appversion": {
+            "PACKAGE_NAME": "com.kerryrichardson.mvplocal"
+        }
+    },
+    "dependent_plugins": {
+        "cordova-plugin-compat": {
+            "PACKAGE_NAME": "com.kerryrichardson.mvplocal"
+        },
+        "cordova-plugin-geolocation": {
+            "PACKAGE_NAME": "com.kerryrichardson.mvplocal"
+        },
+        "cordova-plugin-statusbar": {
+            "PACKAGE_NAME": "com.kerryrichardson.mvplocal"
+        }
+    }
+}

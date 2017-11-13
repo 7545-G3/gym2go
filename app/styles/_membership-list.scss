@@ -1,0 +1,57 @@
+@import "variables";
+
+.membership-list {
+  .memberships {
+    margin: 0 20px;
+    overflow-y: scroll;
+
+    .membershipItem {
+      display: flex;
+      padding: 20px 0px;
+      border-bottom: 1px solid transparentize($main-color, 0.5);
+
+      &:first-child {
+        padding-top: 20px
+      }
+
+      &:last-child {
+        border-bottom: 0
+      }
+
+      .npStatusIcon > img {
+        height: 90px
+      }
+
+      .npDesc {
+        padding: 0 10px 0 20px;
+        flex: 1;
+        font-size: 16px
+      }
+
+      .npActions {
+        flex-flow: column;
+        display: flex;
+        justify-content: space-around
+      }
+
+      .circle {
+        width: 3em;
+        height: 3em;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        &.green {
+          background-color: $main-color;
+          img {
+            width: 2em
+          }
+        }
+      }
+    }
+  }
+}
+
+.memberships::-webkit-scrollbar {
+  display: none;
+}

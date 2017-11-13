@@ -1,0 +1,42 @@
+@import "variables";
+
+.np-map {
+  flex: 1;
+  position: relative;
+
+  .mvpNavbarButton {
+    position: absolute;
+    right: 0;
+    margin: 10px 7px;
+    z-index: 1;
+    color: white;
+  }
+
+  .ng-map {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+  }
+  .npContainer {
+    display: flex;
+    .npActions {
+      flex-flow: column;
+      display: flex;
+      justify-content: space-around;
+      padding-left: .5rem;
+      text-align: center
+    }
+    .greenCircle {
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      background-color: $main-color;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      img {
+        width: 18px;
+      }
+    }
+  }
+}

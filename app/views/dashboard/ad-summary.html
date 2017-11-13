@@ -1,0 +1,72 @@
+<div class="ad-summary">
+  <membership-description
+    name={{adCtrl.np.name}}
+    distance={{adCtrl.np.distance}}
+    member-plan={{adCtrl.membership.plan.name}}
+    status={{adCtrl.getMembershipStatus()}}>
+  </membership-description>
+  <div class="adItem">
+    <div class="npDesc">
+      <div>
+        <span class="bold">{{ adCtrl.ad.name }}</span>
+      </div>
+      <div>
+        <span class="regular">Run Dates:</span>
+        <span>{{ adCtrl.ad.rotation.start | date:'MM/dd/yyyy'}} - {{ adCtrl.ad.rotation.end | date:'MM/dd/yyyy'}}</span>
+      </div>
+      <div>
+        <span class="regular">Status:</span>
+        <span class="{{ adCtrl.getStatus(adCtrl.ad.active) }} capitalize">{{ adCtrl.getStatus(adCtrl.ad.active) }}</span>
+      </div>
+    </div>
+  </div>
+  <div class="info-tabs">
+    <div ng-repeat="tab in adCtrl.tabs"
+         id="{{ tab.id }}"
+         ng-class="{'active': adCtrl.isCurrentTab(tab.id)}"
+         ng-click="adCtrl.setActiveTab(tab.id)">
+      {{ tab.buttonTitle }}
+    </div>
+  </div>
+  <div class="ad-data" ng-show="adCtrl.showData()">
+    <div class="item">
+      <div class="views-icon icon"></div>
+      <span><strong>Views:</strong> {{adCtrl.ad.stats.views}}</span>
+    </div>
+    <div class="item">
+      <div class="likes-icon icon"></div>
+      <span><strong>Likes:</strong> {{adCtrl.ad.stats.likes}}</span>
+    </div>
+    <div class="item">
+      <div class="share-icon icon"></div>
+      <span><strong>Shares:</strong> {{adCtrl.ad.stats.shares}}</span>
+    </div>
+    <div class="item">
+      <div class="earth-icon icon"></div>
+      <span><strong>Website visits:</strong> {{adCtrl.ad.stats.website_clicks}}</span>
+    </div>
+  </div>
+  <div class="ad-details" ng-show="adCtrl.showDetails()">
+    <div class="item">
+      <span><strong>Advertiser Placement</strong></span>
+      <span>{{adCtrl.ad.placement}}</span>
+    </div>
+    <div class="item">
+      <span><strong>Category</strong></span>
+      <span>{{adCtrl.ad.category}}</span>
+    </div>
+    <div class="item">
+      <span><strong>Content</strong></span>
+      <span>{{adCtrl.ad.content}}</span>
+    </div>
+    <div class="item">
+      <span><strong>Locations</strong></span>
+      <div ng-repeat="item in adCtrl.ad.branches">
+        <div class="location-item">
+          <div class="store-icon icon"></div>
+          <span>{{item.address.street + ', ' + item.address.city}}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

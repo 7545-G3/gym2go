@@ -1,0 +1,45 @@
+<div class="manage-membership">
+  <membership-description
+    name={{manager.np.name}}
+    distance={{manager.np.distance}}
+    member-plan={{manager.activeMembership.plan.name}}
+    status={{manager.np.status}}
+    is-auto-renew="{{manager.activeMembership.auto_renew}}"
+    membership-id="{{manager.activeMembership._id}}"
+    >
+  </membership-description>
+  <div class="empty-list"
+       ng-show="manager.ads.length == 0 && !manager.busy && !manager.connectionError">
+    {{manager.locale.dashboard.manage.emptyAds}}
+  </div>
+  <div class=ad-list>
+    <div class="npItem" ng-repeat="item in manager.ads | filter:filter">
+      <div class="npDesc">
+        <div>
+          <span class="bold">{{ item.name }}</span>
+        </div>
+        <div>
+          <span class="regular">{{manager.locale.dashboard.manage.adItem.runDates}}:</span>
+          <span>{{ item.rotation.start | date:'MM/dd/yyyy'}} - {{ item.rotation.end | date:'MM/dd/yyyy'}}</span>
+        </div>
+        <div>
+          <span class="regular">{{manager.locale.dashboard.manage.adItem.status}}:</span>
+          <span class="{{ manager.getStatus(item.active) }} capitalize">{{ manager.getStatus(item.active) }}</span>
+        </div>
+      </div>
+      <div class="npActions">
+        <div class="circle stop" ng-show="item.active"
+             ng-click="manager.goToStopAd()">
+          <img src="images/stop.png">
+        </div>
+        <div class="circle green" ng-click="manager.goToAdDetail(item)">
+          <img src="images/more.png">
+        </div>
+        <div class="circle edit" ng-hide="item.active"
+             ng-click="manager.goToEditAd(item)">
+          <img src="images/pencilIcon.png">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

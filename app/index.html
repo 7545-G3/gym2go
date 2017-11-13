@@ -1,0 +1,155 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, target-densitydpi=medium-dpi, user-scalable=0" />
+    <meta http-equiv="Content-Security-Policy"/>
+
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <!-- build:css(.) styles/vendor.css -->
+    <!-- bower:css -->
+    <link rel="stylesheet" href="bower_components/angular-google-places-autocomplete/src/autocomplete.css" />
+    <link rel="stylesheet" href="bower_components/angular-google-places-autocomplete/dist/autocomplete.min.css" />
+    <link rel="stylesheet" href="bower_components/angular-ui-switch/angular-ui-switch.css" />
+    <link rel="stylesheet" href="bower_components/angularjs-datepicker/dist/angular-datepicker.css" />
+    <link rel="stylesheet" href="bower_components/angular-carousel/dist/angular-carousel.css" />
+    <!-- endbower -->
+    <!-- endbuild -->
+    <!-- build:css(.tmp) styles/main.css -->
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/common.css">
+    <link rel="stylesheet" href="styles/auth.css">
+    <link rel="stylesheet" href="styles/dashboard.css">
+    <link rel="stylesheet" href="styles/settings.css">
+    <link rel="stylesheet" href="styles/location-list.css">
+    <link rel="stylesheet" href="styles/create-location.css">
+    <link rel="stylesheet" href="styles/modal.css">
+    <link rel="stylesheet" href="styles/tutorial.css">
+    <!-- endbuild -->
+  </head>
+
+  <body>
+
+    <!--[if lte IE 8]>
+      <p class="browsehappy">You are using an <strong>outdated</strong> browser.
+      Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+
+    <!-- Add your site or application content here -->
+    <div ui-view></div>
+    <span us-spinner spinner-key="spinner-1">
+      <div class="overlay"></div>
+    </span>
+
+    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
+     <script>
+       ! function(A, n, g, u, l, a, r) {
+           A.GoogleAnalyticsObject = l, A[l] = A[l] || function() {
+                   (A[l].q = A[l].q || []).push(arguments)
+               }, A[l].l = +new Date, a = n.createElement(g),
+               r = n.getElementsByTagName(g)[0], a.src = u, r.parentNode.insertBefore(a, r)
+       }(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+
+       ga('create', 'UA-XXXXX-X');
+       ga('send', 'pageview');
+    </script>
+
+    <script src="cordova.js"></script>
+
+    <script src="https://maps.googleapis.com/maps/api/js?libraries=places,geometry"></script>
+    <!-- build:js(.) scripts/vendor.js -->
+    <!-- bower:js -->
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap.js"></script>
+    <script src="bower_components/angular-resource/angular-resource.js"></script>
+    <script src="bower_components/angular-route/angular-route.js"></script>
+    <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+    <script src="bower_components/angular-touch/angular-touch.js"></script>
+    <script src="bower_components/angular-messages/angular-messages.js"></script>
+    <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+    <script src="bower_components/gsap/src/uncompressed/TweenMax.js"></script>
+    <script src="bower_components/angular-local-storage/dist/angular-local-storage.js"></script>
+    <script src="bower_components/angular-simple-logger/dist/angular-simple-logger.js"></script>
+    <script src="bower_components/lodash/lodash.js"></script>
+    <script src="bower_components/markerclustererplus/src/markerclusterer.js"></script>
+    <script src="bower_components/google-maps-utility-library-v3-markerwithlabel/dist/markerwithlabel.js"></script>
+    <script src="bower_components/google-maps-utility-library-v3-infobox/dist/infobox.js"></script>
+    <script src="bower_components/google-maps-utility-library-v3-keydragzoom/dist/keydragzoom.js"></script>
+    <script src="bower_components/js-rich-marker/src/richmarker.js"></script>
+    <script src="bower_components/angular-google-maps/dist/angular-google-maps.js"></script>
+    <script src="bower_components/angular-google-places-autocomplete/src/autocomplete.js"></script>
+    <script src="bower_components/angular-google-places-autocomplete/dist/autocomplete.min.js"></script>
+    <script src="bower_components/br-validations/releases/br-validations.js"></script>
+    <script src="bower_components/string-mask/src/string-mask.js"></script>
+    <script src="bower_components/angular-input-masks/angular-input-masks-standalone.min.js"></script>
+    <script src="bower_components/underscore/underscore.js"></script>
+    <script src="bower_components/spin.js/spin.js"></script>
+    <script src="bower_components/angular-spinner/angular-spinner.js"></script>
+    <script src="bower_components/angular-ui-switch/angular-ui-switch.js"></script>
+    <script src="bower_components/angular-credit-cards/release/angular-credit-cards.js"></script>
+    <script src="bower_components/braintree-web/dist/braintree.js"></script>
+    <script src="bower_components/ngmap/build/scripts/ng-map.js"></script>
+    <script src="bower_components/angularjs-datepicker/dist/angular-datepicker.js"></script>
+    <script src="bower_components/angular-stripe/release/angular-stripe.js"></script>
+    <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+    <script src="bower_components/angular-animate/angular-animate.js"></script>
+    <script src="bower_components/cloudinary-core/cloudinary-core.js"></script>
+    <script src="bower_components/cloudinary_ng/js/angular.cloudinary.js"></script>
+    <script src="bower_components/ng-file-upload/ng-file-upload.js"></script>
+    <script src="bower_components/angular-carousel/dist/angular-carousel.js"></script>
+    <!-- endbower -->
+    <!-- endbuild -->
+
+    <!-- build:js({.tmp,app}) scripts/scripts.js -->
+    <script src="scripts/services/underscore.js"></script>
+    <script src="scripts/config/angular-ui-router-decorator.js"></script>
+
+    <script src="scripts/app.js"></script>
+    <script src="scripts/constants.js"></script>
+    <script src="scripts/config/hrefSanitization.js"></script>
+
+    <script src="scripts/controllers/initial.js"></script>
+    <script src="scripts/controllers/login.js"></script>
+    <script src="scripts/controllers/dashboard.js"></script>
+    <script src="scripts/controllers/NPList.js"></script>
+    <script src="scripts/controllers/NPMap.js"></script>
+    <script src="scripts/controllers/settings.js"></script>
+    <script src="scripts/controllers/Purchase.js"></script>
+    <script src="scripts/controllers/editBillingInfo.js"></script>
+    <script src="scripts/controllers/purchaseConfirm.js"></script>
+    <script src="scripts/controllers/purchaseSummary.js"></script>
+    <script src="scripts/controllers/actionBar.js"></script>
+    <script src="scripts/controllers/membershipDescription.js"></script>
+    <script src="scripts/controllers/manageMembership.js"></script>
+    <script src="scripts/controllers/membershipList.js"></script>
+    <script src="scripts/controllers/modal.js"></script>
+    <script src="scripts/controllers/updateModal.js"></script>
+
+    <script src="scripts/filters/percentage.js"></script>
+    <script src="scripts/filters/i18n.js"></script>
+
+    <script src="scripts/services/authService.js"></script>
+    <script src="scripts/services/npService.js"></script>
+    <script src="scripts/services/dateService.js"></script>
+    <script src="scripts/services/creditCardService.js"></script>
+    <script src="scripts/services/membershipService.js"></script>
+    <script src="scripts/services/billingService.js"></script>
+    <script src="scripts/services/errorHelper.js"></script>
+    <script src="scripts/services/locationsService.js"></script>
+    <script src="scripts/services/fileReader.js"></script>
+    <script src="scripts/services/localeService.js"></script>
+    <script src="scripts/services/util.js"></script>
+
+    <script src="scripts/directives/mvpActionBar.js"></script>
+    <script src="scripts/directives/pwMatch.js"></script>
+    <script src="scripts/directives/apiMessages.js"></script>
+    <script src="scripts/directives/fileSelect.js"></script>
+    <script src="scripts/directives/infiniteScroll.js"></script>
+    <!-- endbuild -->
+
+  </body>
+
+</html>

@@ -1,0 +1,70 @@
+@import "variables";
+
+.modal-dialog {
+  position: absolute;
+  top: 50% !important;
+  transform: translate(0, -50%) !important;
+  -ms-transform: translate(0, -50%) !important;
+  -webkit-transform: translate(0, -50%) !important;
+  margin: auto 10%;
+  width: 80%;
+  height: 33%
+}
+
+.modal-content {
+  font-family: Avenir Light;
+  min-height: 100%;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0
+}
+
+.modal-body {
+  position: absolute;
+  left: 0;
+  right: 0;
+  overflow-y: auto;
+  color: $dark-gray;
+  text-align: center;
+  font-size: 1em;
+  padding: 5px
+}
+
+.modal-footer {
+  &.connection-error {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: $main-color;
+    text-align: center;
+    color: white;
+    font-size: 1.5em
+  }
+}
+
+.modal-header {
+  border: none;
+  font: {
+    weight: bold;
+    size: 1.5em
+  }
+  color: $main-color;
+  text-align: center
+}
+
+.update-modal {
+  .modal-header {
+    padding: 8px
+  }
+  .modal-body {
+    font-size: 1em
+  }
+  .modal-footer {
+    display: flex;
+    background-color: $background
+
+  }
+}

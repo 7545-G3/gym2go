@@ -1,0 +1,100 @@
+<div class="editBillingInfo">
+
+  <div class="title"><b>Credit card</b></div>
+
+  <form class="commonForm" name="editBillingForm" ng-submit="editBillingInfo.saveCreditCard()" novalidate>
+
+    <!-- Card Number -->
+    <div class="item">
+      <div class="input-group">
+        <div class="input-group-addon fs-20 p-left-xs-0"><i class="icon user"></i></div>
+        <input
+          type="text"
+          class="form-control m-top-xs-5"
+          ng-model="editBillingInfo.number"
+          name="number"
+          placeholder="Card Number"
+          autocapitalize="none"
+          cc-number
+          cc-format
+          cc-eager-type
+          required>
+      </div>
+      <div
+        class="ng-messages"
+        ng-messages="editBillingForm.number.$error"
+        ng-show="editBillingForm.number.$touched && editBillingForm.number.$error"
+        role="alert">
+        <div ng-message="required"><strong>Card Number is required</strong></div>
+        <div ng-message="ccNumberType"><strong>Card Number is not valid</strong></div>
+      </div>
+    </div>
+
+    <!-- CVV -->
+    <div class="item">
+      <div class="input-group">
+        <div class="input-group-addon fs-20 p-left-xs-0"><i class="icon user"></i></div>
+        <input
+          type="text"
+          class="form-control m-top-xs-5"
+          ng-model="editBillingInfo.cvv"
+          name="cvv"
+          placeholder="CVV"
+          autocapitalize="none"
+          cc-cvc
+          required>
+      </div>
+      <div
+        class="ng-messages"
+        ng-messages="editBillingForm.cvv.$error"
+        ng-show="editBillingForm.cvv.$touched && editBillingForm.cvv.$invalid"
+        role="alert">
+        <div ng-message="required"><strong>CVV is required</strong></div>
+        <div ng-message="ccCvc"><strong>CVV is not valid</strong></div>
+      </div>
+    </div>
+
+    <!-- Expiration date -->
+    <div class="item">
+      <div class="expirationDate">
+        <div class="item-title">Expires</div>
+        <select
+          class="form-control"
+          ng-model="editBillingInfo.expirationMonth"
+          name="expirationMonth"
+          ng-options="month.name for month in editBillingInfo.months track by month.number"
+          required>
+          <option value="" disabled>mm</option>
+        </select>
+        <select
+          class="form-control"
+          ng-model="editBillingInfo.expirationYear"
+          name="expirationYear"
+          ng-options="year for year in editBillingInfo.years track by year"
+          required>
+          <option value="" disabled>yyyy</option>
+        </select>
+      </div>
+      <div
+        class="ng-messages"
+        ng-messages="editBillingForm.expirationMonth.$error"
+        ng-show="editBillingForm.expirationMonth.$touched && editBillingForm.expirationMonth.$invalid"
+        role="alert">
+        <div ng-message="required"><strong>Expiration date is required</strong></div>
+      </div>
+      <div ng-show="editBillingInfo.errorMessages['card_token']"
+           class="ng-messages fs-15 ng-active">
+        <div class="ng-scope"><strong>{{ editBillingInfo.errorMessages['card_token'] }}</strong></div>
+      </div>
+    </div>
+
+    <!-- Save button -->
+    <div class="button-container">
+      <button type="submit" class="btn btn-success col-xs-12 m-top-xs-10" ng-disabled="editBillingForm.$invalid">
+        Save
+      </button>
+    </div>
+
+  </form>
+
+</div>

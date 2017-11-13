@@ -1,0 +1,75 @@
+.adList {
+  margin: 0 20px;
+  overflow-y: scroll;
+
+  .title {
+    font-family: Avenir Regular;
+    font-size: 1.5em;
+    margin-top: 0.5em;
+  }
+
+  .adItem {
+    display: flex;
+    padding: 20px 0px;
+    border-bottom: 1px solid transparentize($main-color, 0.5);
+    
+    .bold {
+      font-family: Avenir Bold;
+    }
+
+    &:first-child {
+      padding-top: 10px;
+    }
+
+    &:last-child{
+      border-bottom: 0;
+    }
+
+    .adIcon {
+      padding: 5px;
+
+      >img {
+        width: 35px;
+      }
+    }
+
+    .adDesc {
+      padding: 0 21px 0;
+      flex: 1;
+      font-size: 16px;
+    }
+
+    .adButton {
+      display: flex;
+      align-items: center;
+
+      >button {
+        height: 31px;
+        padding-top: 6px;
+        border: 0;
+
+        &.green {
+          color: white;
+          background: $main-color;
+        }
+      }
+    }
+
+  }
+}
+
+.adList::-webkit-scrollbar {
+  display: none;
+}
+
+.manageCreateAd {
+  fieldset {
+    display: inline-flex
+  }
+}
+
+.emptyLibrary {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+}

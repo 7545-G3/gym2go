@@ -1,0 +1,7 @@
+{
+  "APP": {
+    "NPLIST_LIMIT": 6,
+    "NPLIST_RANGE": 10000,
+    "TIME_TO_UPDATE_SETTINGS": 14400000
+  }
+}

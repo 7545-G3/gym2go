@@ -1,0 +1,102 @@
+@import "variables";
+
+.manage-membership {
+  margin: 0 1em;
+  padding-bottom: 1.5em;
+  overflow: scroll;
+  .ad-list {
+    overflow-y: scroll;
+    .npItem {
+      align-items: center;
+      display: flex;
+      padding: 1.3em 0;
+      border-bottom: 1px solid transparentize($main-color, 0.5);
+
+      &:last-child {
+        border-bottom: 0;
+      }
+
+      .npStatusIcon > img {
+        height: 90px;
+      }
+
+      .npDesc {
+        flex: 1;
+        font-size: 1em;
+      }
+
+      .npActions {
+        flex-flow: column;
+        display: flex;
+        justify-content: space-around;
+
+        .circle {
+          width: 3em;
+          height: 3em;
+          border-radius: 50%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          background-color: $main-color;
+
+          &.green {
+            img {
+              width: 2em
+            }
+          }
+
+          &.stop {
+            background-color: $stop-color;
+            margin-bottom: .5em;
+            img {
+              width: 1.3em
+            }
+          }
+
+          &.edit {
+            margin-top: .5em;
+            img {
+              filter: brightness(0) invert(1);
+              width: 1.75em;
+              padding-left: 1px
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .errors {
+    margin-top: 1em;
+    text-align: center
+  }
+
+  .buttons {
+    border-top: 1px solid transparentize($main-color, 0.5);
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    padding-top: 3em;
+    align-items: center;
+    .start-next {
+      margin-top: 1em
+    }
+    .replace {
+      border: 2px solid $main-color;
+      background-color: white;
+      color: $main-color;
+    }
+    button {
+      max-width: 13em;
+      font-size: 1.2em
+    }
+  }
+}
+
+.ad-list::-webkit-scrollbar {
+  display: none;
+}
+
+.manage-membership::-webkit-scrollbar {
+  display: none;
+}

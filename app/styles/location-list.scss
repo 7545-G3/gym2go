@@ -1,0 +1,83 @@
+@import "variables";
+
+#locations {
+  .location-list {
+    margin: 0 1em;
+    overflow-y: scroll;
+    .npDesc {
+      > div {
+        margin-bottom: 2px;
+      }
+      .bold {
+        font-family: Avenir Bold;
+      }
+      .regular {
+        font-family: Avenir;
+      }
+      .directions {
+        position: relative;
+        top: 3px;
+        color: $main-color;
+        font-weight: bold;
+      }
+      .active {
+        color: $np-active-color;
+      }
+      .inactive {
+        color: $np-inactive-color;
+      }
+      .opportunity {
+        color: $np-opportunity-color;
+      }
+      input {
+        border: none
+      }
+    }
+    .npItem {
+      align-items: center;
+      display: flex;
+      padding: 1.3em 0;
+      border-bottom: 1px solid transparentize($main-color, 0.5);
+      &:last-child {
+        border-bottom: 0;
+      }
+      .npDesc {
+        flex: 1;
+        font-size: 1em;
+      }
+      .npActions {
+        flex-flow: column;
+        display: flex;
+        justify-content: space-around;
+        .circle {
+          width: 3em;
+          height: 3em;
+          border-radius: 50%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          background-color: $main-color;
+          &.delete {
+            background-color: $stop-color;
+            img {
+              width: 1.3em
+            }
+            span {
+              color: white;
+              font-size: 2em;
+              margin-top: .2em
+            }
+          }
+          &.edit {
+            margin-bottom: .5em;
+            img {
+              filter: brightness(0) invert(1);
+              width: 1.75em;
+              padding-left: 1px
+            }
+          }
+        }
+      }
+    }
+  }
+}

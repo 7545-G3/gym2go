@@ -1,0 +1,20 @@
+<div id="dashboard">
+  <mvp-action-bar
+    title="{{ dashboard.currentTab.title | i18n }}"
+    platform="{{ dashboard.platform }}"
+    back-button-enabled="{{ dashboard.state.current.data.backButtonEnabled }}"
+    >
+  </mvp-action-bar>
+  <div ui-view class="tabContainer"></div>
+  <div class="tabSelector">
+    <ul>
+      <li ng-repeat="tab in dashboard.tabs"
+        ui-sref="{{ tab.sref }}"
+        ui-sref-active="active"
+        ng-click="dashboard.changeCurrentTab(tab.id)"
+        class="{{ tab.id }}">
+        {{ tab.buttonTitle | i18n }}
+      </li>
+    </ul>
+  </div>
+</div>

@@ -1,0 +1,105 @@
+.manageCreateAd {
+  overflow-y: scroll;
+  padding: 15px;
+
+  .item {
+    margin-bottom: 20px;
+
+    .item-title {
+      font-size: 16px;
+      margin-right: 10px;
+      padding-top: 5px;
+    }
+
+    textarea {
+      min-height: 80px;
+      resize: none;
+    }
+  }
+
+  .adName {
+    position: relative;
+
+    .input-group {
+      flex: 1;
+      display: flex;
+      margin-right: 65px;
+    }
+
+    .greenCircle {
+      position: absolute;
+      top: -2px;
+      right: 0;
+    }
+  }
+
+  .url {
+    position: relative;
+
+    .input-group {
+      flex: 1;
+      display: flex
+    }
+
+    .greenCircle {
+      position: absolute;
+      top: -2px;
+      right: 0
+    }
+  }
+
+  .adRotation {
+    display: flex;
+    margin-top: 3px;
+
+    > div {
+      color: $light-gray;
+      flex: 1;
+      position: relative;
+
+      input {
+        font-family: Avenir Light;
+      }
+    }
+
+    // Manually position calendar when screen too small
+    @media (max-width: 450px) {
+      #endDateCalendar {
+        position: absolute;
+        bottom: 0;
+        left: -65px;
+      }
+    }
+
+    @import "_customDatepicker";
+  }
+
+  .checkboxes {
+    display: flex;
+    justify-content: space-around;
+
+    span {
+      margin-left: 5px;
+    }
+  }
+
+  .button-container {
+    padding-left: 3em;
+    padding-right: 3em;
+
+    button {
+      font-family: Avenir Roman Bold;
+      padding-top: 8px;
+    }
+  }
+
+  input[type=number]::-webkit-inner-spin-button,
+  input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+}
+
+.manageCreateAd::-webkit-scrollbar {
+  display: none;
+}

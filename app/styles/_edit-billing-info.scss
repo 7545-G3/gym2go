@@ -1,0 +1,52 @@
+.editBillingInfo{
+
+  overflow-y: scroll;
+  padding: 15px;
+
+  .title{
+    margin-top: 10px;
+    margin-bottom: 15px;
+    font-size: 1.25em;
+    font-family: Avenir Bold;
+  }
+
+  .item{
+    margin-bottom: 20px;
+
+    .item-title{
+      font-size: 16px;
+      margin-right: 10px;
+      padding-top: 10px;
+    }
+  }
+
+  .expirationDate{
+    display: flex;
+
+    >select{
+      flex: 1;
+      margin: 0 5px;
+    }
+  }
+
+  .button-container{
+    padding-left: 3em;
+    padding-right: 3em;
+
+    button{
+      font-family: Avenir Roman Bold;
+      padding-top: 8px;
+    }
+  }
+
+  input[type=number]::-webkit-inner-spin-button, 
+  input[type=number]::-webkit-outer-spin-button { 
+    -webkit-appearance: none; 
+    margin: 0; 
+  }
+
+  fieldset {
+    display: inline-block;
+    margin-top: 1em
+  }
+}

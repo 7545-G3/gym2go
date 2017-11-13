@@ -1,0 +1,65 @@
+<div class="tab-content">
+
+  <div class="mvpNavbar">
+    <div class="searchBox">
+      <input ng-model="npList.filter" ng-change="npList.onFilterChanged()" type="text"
+             placeholder="{{'dashboard.shared.searchNonprofits' | i18n}}">
+      <img src="images/search.png" ng-show="!npList.filter">
+      <img src="images/clear.png" ng-hide="!npList.filter" ng-click="npList.clearFilter()">
+    </div>
+    <button class="mvpNavbarButton" ui-sref="dashboard.find-np.map" ng-show="npList.showMapButton">{{"dashboard.shared.goToMapButton" | i18n}}</button>
+  </div>
+  <div class="empty-list" ng-show="npList.items.length == 0 && !npList.busy && !npList.connectionError">{{"dashboard.findNp.emptyList" | i18n}}</div>
+  <div class=np-list infinite-scroll='npList.loadMore()' infinite-scroll-disabled='npList.busy' infinite-scroll-distance='0'>
+    <div class="npItem" ng-repeat="item in npList.items | filter:filter" ng-click="npList.itemClick()">
+      <div class="npStatusIcon">
+        <img src="images/marker_green.png" ng-show="item.status == 'active'">
+        <img src="images/marker_black.png" ng-show="item.status == 'inactive'">
+        <img src="images/marker_grey.png" ng-show="item.status == 'opportunity'">
+      </div>
+      <div class="npDesc">
+        <div>
+          <span class="bold">{{ item.name }}</span>
+        </div>
+        <div>
+          <span>{{ item.shipping_city +", "+item.shipping_state }}</span>
+        </div>
+        <div>
+          <span class="regular">{{"dashboard.shared.npItem.distance" | i18n}}:</span>
+          <span>{{ item.distance }} Miles</span>
+        </div>
+        <div ng-show="npList.showNamePlan">
+          <span class="regular">{{"dashboard.shared.npItem.memberPlan" | i18n}}:</span>
+          <span class="plan capitalize">{{ item.memberships[0].plan.name }}</span>
+        </div>
+        <div>
+          <span class="regular">{{"dashboard.shared.npItem.status" | i18n}}:</span>
+          <span class="{{ item.status }} capitalize">{{ item.status }}</span>
+        </div>
+        <div>
+          <span class="directions"><a href="{{ item.mapHref }}">{{"dashboard.shared.npItem.getDirections" | i18n}}</a></span>
+        </div>
+      </div>
+      <div class="npActions" ng-show="npList.itemClick == undefined">
+        <div class="greenCircle"
+             ng-click="npList.goToPurchase(item, 'purchase')"
+             ng-show="item.status == 'opportunity'">
+          <img src="images/purchase_selected.png" style="padding-right: 1px;">
+        </div>
+        <div class="greenCircle" ng-show="item.status == 'inactive'"
+             ng-click="npList.goToPurchase(item, 'renew')">
+          <img src="images/refresh.png" style="padding-right: 1px;">
+        </div>
+        <div class="greenCircle" ng-show="item.status == 'inactive'"
+             ng-click="npList.goToHistory(item)">
+          <img src="images/history_selected.png" style="padding-top: 3px; padding-left: 1px;">
+        </div>
+        <div class="greenCircle" ng-show="item.status == 'active'"
+             ng-click="npList.goToManageMembership(item)">
+          <img src="images/manage_selected.png">
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>

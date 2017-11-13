@@ -1,0 +1,151 @@
+@import "variables";
+
+#dashboard {
+
+  @extend .pageStyle;
+
+  .tabContainer {
+    flex: 1;
+    display: flex;
+
+    > div {
+      flex: 1;
+    }
+
+    .tab-content {
+      display: flex;
+      flex-flow: column;
+      flex: 1;
+    }
+
+    @import "np-list";
+    @import "np-map";
+    @import "mvpNavbar";
+    @import "npDescription";
+    @import "membershipDescription";
+    @import "purchase";
+    @import "purchaseInfo";
+    @import "manage";
+    @import "membershipManage";
+    @import "membership-list";
+    @import "ad-history";
+    @import "ad-summary";
+    @import "ad-locations";
+  }
+
+  // We put this here instead of in np-list becase the map info-window also needs it
+  .npDesc{
+    >div{
+      margin-bottom: 2px;
+    }
+
+    .bold {
+      font-family: Avenir Bold;
+    }
+
+    .regular {
+      font-family: Avenir;
+    }
+
+    .directions {
+      position: relative;
+      top: 3px;
+      color: $main-color;
+      font-weight: bold;
+
+      >a {
+        text-decoration: none;
+      }
+    }
+
+    .active {
+      color: $np-active-color;
+    }
+    .inactive {
+      color: $np-inactive-color;
+    }
+    .opportunity {
+      color: $np-opportunity-color;
+    }
+  }
+
+  .tabSelector {
+    height: $footer-height;
+    background-color: $background;
+    color: $main-color;
+
+    ul {
+      display: flex;
+      justify-content: space-around;
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      list-style-type: none;
+
+      li {
+        @extend .iconConfig;
+        line-height: 86px;
+        padding-top: 8px;
+        text-transform: uppercase;
+        font-size: 11px;
+        flex: 1;
+        text-align: center;
+
+        &.active {
+          color: white;
+        }
+
+        &.find-np {
+          background-image: url("../images/findnp.png");
+        }
+        &.purchase {
+          background-image: url("../images/purchase.png");
+        }
+        &.manage {
+          background-image: url("../images/manage.png");
+        }
+        &.history {
+          background-image: url("../images/history.png");
+        }
+        &.billing {
+          background-image: url("../images/billing.png");
+        }
+
+        &.find-np.active {
+          background-image: url("../images/findnp_selected.png");
+        }
+        &.purchase.active {
+          background-image: url("../images/purchase_selected.png");
+        }
+        &.manage.active {
+          background-image: url("../images/manage_selected.png");
+        }
+        &.history.active {
+          background-image: url("../images/history_selected.png");
+        }
+        &.billing.active {
+          background-image: url("../images/billing_selected.png");
+        }
+      }
+    }
+  }
+}
+
+// TODO: move to a more generic file
+.pageStyle {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-flow: column;
+}
+
+// TODO: replace with mixin (make _mixins.css)
+.iconConfig {
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-origin: content-box;
+  background-size: 30px 30px;
+}

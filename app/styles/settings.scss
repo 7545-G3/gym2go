@@ -1,0 +1,38 @@
+@import "variables";
+
+@import "changePassword";
+@import "profile";
+@import "adLibrary";
+
+#settingsPage {
+  background-color: $background;
+  flex-direction: column;
+  .options {
+    overflow-y: scroll;
+    padding: 2em 2em;
+    width: 100%;
+    .option {
+      margin-bottom: 3em;
+      border-bottom: 1px solid $light-gray;
+      &:last-child {
+        margin-bottom: 0
+      }
+    }
+  }
+  .button-container {
+    padding: {
+      left: 4em;
+      right: 4em
+    }
+  }
+  a {
+    text-decoration: none
+  }
+  a:visited {
+    color: #BCBEC0
+  }
+  a:hover {
+    color: #3eb649
+  }
+
+}

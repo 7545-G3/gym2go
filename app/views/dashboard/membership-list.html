@@ -1,0 +1,29 @@
+<div class="tab-content membership-list">
+  <div class=memberships>
+    <div class="membershipItem" ng-repeat="item in membershipsCtrl.memberships">
+      <div class="npStatusIcon">
+        <img src="images/marker_green.png" ng-show="item.is_active">
+        <img src="images/marker_black.png" ng-show="!item.is_active">
+      </div>
+      <div class="npDesc">
+        <div>
+          <span class="bold">{{ membershipsCtrl.np.name }}</span>
+        </div>
+        <div>
+          <span class="regular">{{"dashboard.shared.npItem.memberPlan" | i18n}}:</span>
+          <span class="plan capitalize">{{ item.plan.name }}</span>
+        </div>
+        <div>
+          <span class="regular">{{"dashboard.shared.npItem.status" | i18n}}:</span>
+          <span class="{{ membershipsCtrl.getStatus(item.is_active) }} capitalize">{{ membershipsCtrl.getStatus(item.is_active) }}</span>
+        </div>
+      </div>
+      <div class="npActions">
+        <div class="circle green" ng-click="membershipsCtrl.clickAction(item)">
+          <img src="images/more.png">
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>

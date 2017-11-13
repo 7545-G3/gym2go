@@ -1,0 +1,10 @@
+<div class="mvpActionBar">
+	<span
+    class="glyphicon glyphicon-menu-left icon"
+    ng-click="goBack()"
+    ng-style="(platform != 'iOS' || backButtonEnabled == 'false') && {'visibility':'hidden'}">
+  </span>
+  <span>{{ title }}</span>
+  <span class="glyphicon glyphicon-cog icon" ui-sref="settings"
+        ng-style="showButton() && {'visibility':'hidden'}"></span>
+</div>

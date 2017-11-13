@@ -1,0 +1,36 @@
+.profile{
+
+  form {
+    margin: 1.5em;
+  }
+
+  .item {
+    margin-bottom: 20px;
+  }
+
+  .picture {
+    max-height: 7em;
+    margin-bottom: 0.5em;
+  }
+
+  .pictureHelper {
+    font-size: 10px;
+    text-transform: uppercase;
+    color: grey;
+    margin-top: 0.7em;
+  }
+
+  #fileBrowser {
+    display: none;
+  }
+
+  .button-container {
+    padding-left: 3em;
+    padding-right: 3em;
+
+    button {
+      font-family: Avenir Roman Bold;
+      padding-top: 8px;
+    }
+  }
+}

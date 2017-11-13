@@ -1,0 +1,19 @@
+@import "variables";
+
+#create-location {
+  form {
+    margin: 2em 0;
+    .form-group {
+      margin-bottom: 30px;
+      .input-group {
+        width: 100%
+      }
+    }
+  }
+  .button-container {
+    margin: {
+      left: 25%;
+      right: 25%
+    }
+  }
+}

@@ -1,0 +1,259 @@
+@import "variables";
+@import "fonts";
+@import "responsive";
+
+html {
+  overflow: hidden
+}
+
+body {
+  font-family: Avenir Light;
+  user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -webkit-user-select: none;
+  -webkit-touch-callout: none
+}
+
+.vcenter {
+  min-height: 100%;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+
+  &.ios {
+    padding-top: 85px;
+  }
+}
+
+a,
+a:hover,
+a:focus,
+a:visited {
+  color: $main-color;
+}
+
+.capitalize {
+  text-transform: capitalize;
+}
+
+input {
+  outline: none;
+}
+
+/*---- FONT STYLES -----*/
+.text-bold {
+  font-weight: bold;
+}
+
+// Sizes
+.fs-15{font-size:15px;}
+.fs-20{font-size:20px;}
+.fs-25{font-size:25px;}
+.fs-30{font-size:30px;}
+.fs-40{font-size:40px;}
+.fs-50{font-size:50px;}
+.fs-60{font-size:60px;}
+
+// Line height
+.lh-35 {
+  line-height: 35px;
+}
+
+// Colors
+.fc-green {
+  color: $main-color;
+}
+
+.fc-white {
+  color: #FFFFFF;
+}
+
+.fc-light-gray {
+  color: $light-gray;
+}
+
+/*---- ERROR MESSAGES -----*/
+.ng-messages {
+  div {
+    color: $error;
+  }
+}
+
+/*----- ACTION BAR -----*/
+.mvpActionBar {
+  height: $action-bar-height;
+  line-height: $action-bar-height;
+  background-color: $background;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 10px;
+  font-size: 20px;
+
+  .icon {
+    color: $main-color;
+  }
+}
+
+/*---- BORDER COLORS -----*/
+.b-bottom {
+  border-bottom: 2px solid $main-color;
+}
+
+/*---- FORM INPUTs ----------------------------------------------*/
+form.commonForm {
+  .input-group {
+    color: $light-gray;
+    border-bottom: 1px solid $light-gray;
+
+    .input-group-addon {
+      background: none;
+      border: none;
+      color: $light-gray;
+
+      .icon {
+        background-size: contain;
+        background-repeat: no-repeat;
+        margin-left: 5px;
+        background-position: center center;
+
+        &.user{
+          background-image: url('../images/user.png');
+          width: 20px;
+          height: 20px;
+          float: left;
+        }
+        &.calendar{
+          background-image: url('../images/calendar.png');
+          width: 20px;
+          height: 20px;
+          float: left;
+        }
+        &.phone{
+          background-image: url('../images/phone.png');
+          width: 20px;
+          height: 20px;
+          float: left;
+        }
+        &.marker{
+          background-image: url('../images/marker.png');
+          width: 20px;
+          height: 20px;
+          float: left;
+        }
+        &.password{
+          background-image: url('../images/lock.png');
+          width: 20px;
+          height: 20px;
+          float: left;
+        }
+        &.business{
+          background-image: url('../images/business.png');
+          width: 22px;
+          height: 22px;
+          float: left;
+        }
+      }
+    }
+
+    input{
+      @extend .commonInput;
+    }
+
+    input[type=button] {
+      background: url(../images/arrowSelectRight.png) no-repeat right !important;
+      background-size: 0.55em !important;
+      border-right: 4px solid transparent; // background image padding
+      text-align: left;
+    }
+  }
+
+  select{
+    @extend .commonInput;
+    border-bottom: 1px solid $light-gray !important;
+  }
+
+  .commonInput{
+    background: none;
+    border: none;
+    box-shadow: none;
+    line-height: 40px;
+    padding: 0;
+    margin: 0;
+    font-size: 20px;
+  }
+
+  .ng-messages > div{
+    min-height: 18px;
+    margin-top: 3px;
+    font-size: 13px;
+    &:last-child{
+      margin-bottom: -21px; // Div height + margin
+    }
+  }
+}
+
+select {
+  -webkit-appearance: none !important;
+  background: url(../images/arrowSelect.png) no-repeat right !important;
+  background-size: 1em !important
+}
+
+.greenCircle {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  background-color: $main-color;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  img {
+    width: 28px;
+  }
+}
+
+.spinner ~ .overlay {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.2);
+  position: fixed;
+  top: 0;
+  left: 0
+}
+
+.commonTitle {
+  font-family: Avenir Regular;
+  font-size: 1.5em;
+}
+
+.npDesc {
+  .switch {
+    border: 1px solid #dfdfdf;
+    position: relative;
+    display: inline-block;
+    box-sizing: content-box;
+    overflow: visible;
+    width: 3.3em;
+    height: 1.95em;
+    padding: 0;
+    margin: 0;
+    border-radius: 20px;
+    cursor: pointer;
+    box-shadow: rgb(223, 223, 223) 0 0 0 0 inset;
+    transition: 0.3s ease-out all;
+    -webkit-transition: 0.3s ease-out all;
+    top: 0
+  }
+}
+
+.switch-content {
+  display: flex;
+  font-weight: bold;
+  .switch-label {
+    margin-right: .5em;
+    line-height: 35px
+  }
+}

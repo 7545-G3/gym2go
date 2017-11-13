@@ -1,0 +1,32 @@
+<div class="membership-description">
+  <div class="npStatusIcon">
+    <img src="images/marker_green.png" ng-show="status == 'active'">
+    <img src="images/marker_black.png" ng-show="status == 'inactive'">
+  </div>
+  <div class="npDesc">
+    <div>
+      <span class="bold ng-binding">{{name}}</span>
+    </div>
+    <div>
+      <span class="regular">{{"dashboard.shared.npItem.distance" | i18n}}:</span>
+      <span class="distance">{{distance}} Mi.</span>
+    </div>
+    <div>
+      <span class="regular">{{"dashboard.shared.npItem.memberPlan" | i18n}}:</span>
+      <span class="distance">{{memberPlan}}</span>
+    </div>
+    <div class="switch-content" ng-show="ctrl.showSwitch">
+      <div class="switch-label">{{"dashboard.purchase.newPurchase.autoRenew" | i18n}}</div>
+      <form>
+        <switch id="enabled" name="enabled" ng-model="ctrl.isAutoRenew" ng-change="ctrl.updateAutoRenew()" class="green"></switch>
+      </form>
+    </div>
+    <button
+      type="submit"
+      class="btn btn-success pull-right col-xs-5 fs-14"
+      ui-sref="dashboard.manage.create-ad({action: 'create'})"
+      ng-show="ctrl.showButton">
+      <span>{{"dashboard.manage.createAdButton" | i18n}}</span>
+    </button>
+  </div>
+</div>

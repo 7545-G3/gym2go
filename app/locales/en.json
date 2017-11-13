@@ -1,0 +1,269 @@
+{
+  "dashboard": {
+    "shared": {
+      "npItem": {
+        "status": "Status",
+        "distance": "Distance",
+        "getDirections": "Get Directions",
+        "memberPlan": "Member Plan"
+      },
+      "searchNonprofits": "Search Nonprofit...",
+      "goToMapButton": "Go to map",
+      "placeholderFrom": "From",
+      "placeholderTo": "To"
+    },
+    "findNp": {
+      "headerTitle": "Find Nonprofits",
+      "buttonTitle": "Nprofits",
+      "emptyList": "Oops. No nearby nonprofits."
+    },
+    "history": {
+      "headerTitle": "History",
+      "buttonTitle": "History",
+      "title": "Non Profit Member List",
+      "emptyAds": "There are no ads",
+      "filterButton": "Filter",
+      "clearButton": "Clear",
+      "adItem": {
+        "runDates": "Run Dates",
+        "status": "Status"
+      }
+    },
+    "manage": {
+      "headerTitle": "Manage",
+      "buttonTitle": "Manage",
+      "emptyAds": "There are no ads",
+      "createAdButton": "Create Ad",
+      "library": {
+        "apply": "Apply",
+        "remove": "Remove",
+        "empty": "Library is empty!"
+      },
+      "createAd": {
+        "adNamePlaceholder": "Ad Name",
+        "rotationLabel": "Rotation",
+        "endDatePlaceholder": "End",
+        "startDatePlaceholder": "Start",
+        "placementPlaceholder": "Ad Placement",
+        "categoryPlaceholder": "Ad Category",
+        "websitePlaceholder": "Website URL",
+        "locationsPlaceholder": "Assign locations",
+        "contentLabel": "Content",
+        "disclaimerLabel": "Disclaimer",
+        "rotationCheck": "Add to rotation",
+        "saveButton": "Save",
+        "errors": {
+          "requiredAd": "Ad is required",
+          "requiredPlacement": "Placement is required",
+          "requiredCategory": "Category is required",
+          "requiredContent": "Content is required",
+          "requiredDisclaimer": "Disclaimer is required",
+          "contentMaxLength": "Content length cannot be over 190 chars"
+        }
+      },
+      "adItem": {
+        "runDates": "Run Dates",
+        "status": "Status"
+      }
+    },
+    "billing": {
+      "headerTitle": "Billing",
+      "buttonTitle": "Billing",
+      "title": "Billing & Membership Summary",
+      "summary": {
+        "transactionDate": "Transaction Date",
+        "transactionStatus": "Transaction Status",
+        "creditCard": "Credit Card",
+        "expiration": "Exp",
+        "purchaseInformation": "Purchase Information",
+        "standardPrice": "Standard Price",
+        "purchaseDiscount": "Purchase Discount",
+        "purchasePrice": "Purchase Price",
+        "donationAmount": "Donation Amount",
+        "renewalDate": "Renewal Date",
+        "autoRenewal": "Auto Renewal",
+        "startButton": "Start Creating Ads"
+      }
+    },
+    "purchase": {
+      "headerTitle": "Purchase",
+      "buttonTitle": "Purchase",
+      "newPurchase": {
+        "creditCard": "Credit Card",
+        "expiration": "Expiration",
+        "choosePlan": "Choose a Membership Plan",
+        "purchaseOptions": "Purchase Options",
+        "autoRenew": "Auto renew",
+        "month": "month",
+        "nextButton": "Next"
+      },
+      "confirmPurchase": {
+        "renewalDate": "Renewal Date",
+        "autoRenewal": "Auto Renewal",
+        "confirmButton": "Confirm",
+        "cancelButton": "Cancel"
+      }
+    }
+  },
+  "settings": {
+    "headerTitle": "Settings",
+    "myProfile": "My Profile",
+    "locationList": "Location List",
+    "addLocation": "Add a location",
+    "manageLibrary": "Manage library",
+    "manageLibraryCap": "Manage Library",
+    "logout": "Logout",
+    "share": "Share this app",
+    "createLocation": {
+      "headerTitle": "Admin locations",
+      "storeNamePlaceholder": "Store Name",
+      "requiredStoreName": "Store Name is required",
+      "addressPlaceholder": "Address",
+      "requiredAddress": "Address is required",
+      "invalidAddress": "Select a valid address",
+      "zipCodePlaceholder": "Zip Code",
+      "requiredZipCode": "Zip Code is required",
+      "contactNamePlaceholder": "Contact Name",
+      "requiredContactName": "Contact name is required",
+      "titlePlaceholder": "Title",
+      "requiredTitle": "Title is required",
+      "phonePlaceholder": "Phone",
+      "requiredPhone": "Phone Number is required",
+      "saveButton": "Save"
+    }
+  },
+  "welcome": {
+    "joinButton": "join the community",
+    "loginButton": "sign in with"
+  },
+  "login": {
+    "emailPlaceholder": "Email",
+    "requiredEmail": "Email is required",
+    "invalidEmail": "Email is not valid",
+    "passwordPlaceholder": "Password",
+    "requiredPassword": "Password is required",
+    "invalidPassword": "Password should be at least 8 characters",
+    "forgotPassword": "Forgot password?",
+    "signupLink": "I don't have an account",
+    "loginButton": "Go!"
+  },
+  "signup": {
+    "businessNamePlaceholder": "Business name",
+    "requiredBusinessName": "Business name is required",
+    "businessAddressPlaceholder": "Business address",
+    "requiredBusinessAddress": "Business address is required",
+    "invalidAddress": "Select a valid address",
+    "zipCodePlaceholder": "Zip code",
+    "requiredZipCode": "Zip Code is required",
+    "firstNamePlaceholder": "First name",
+    "requiredFirstName": "First name is required",
+    "lastNamePlaceholder": "Last name",
+    "requiredLastName": "Last name is required",
+    "phonePlaceholder": "Phone number",
+    "requiredPhone": "Phone number is required",
+    "invalidPhone": "Phone number is not valid",
+    "emailPlaceholder": "Email address",
+    "requiredEmail": "Email is required",
+    "invalidEmail": "Email is not valid",
+    "passwordPlaceholder": "Password",
+    "requiredPassword": "Password is required",
+    "passwordMinChars": "Password should be at least 8 characters",
+    "passwordPattern": "Password must contain at least one capital letter, one special character and on number",
+    "confirmPasswordPlaceholder": "Confirm password",
+    "requiredPassConfirm": "Confirm password is required",
+    "passConfirmMinChars": "Confirm Password should be at least 8 characters",
+    "passConfirmMatch": "Password and Confirm password should be equals",
+    "signupButton": "Go!",
+    "loginLink": "I already have an account"
+  },
+  "myProfile": {
+    "businessNamePlaceholder": "Business name",
+    "requiredBusinessName": "Business name is required",
+    "addressPlaceholder": "Business address",
+    "invalidAddress": "Invalid address",
+    "requiredAddress": "Business address is required",
+    "zipCodePlaceholder": "Zip Code",
+    "requiredZipCode": "Zip code is required",
+    "firstNamePlaceholder": "First name",
+    "requiredFirstName": "First name is required",
+    "invalidFirstName": "Invalid first name",
+    "firstNameMinLength": "First name should be at least 2 characters",
+    "lastNamePlaceholder": "Last name",
+    "requiredLastName": "Last name is required",
+    "invalidLastName": "Invalid last name",
+    "lastNameMinLength": "Last name should be at least 2 characters",
+    "phonePlaceholder": "Phone number",
+    "invalidPhone": "Phone number is not valid",
+    "requiredPhone": "Phone is required"
+  },
+  "changePassword": {
+    "currentPasswordPlaceholder": "Current password",
+    "requiredCurrentPassword": "Current password is required",
+    "newPasswordPlaceholder": "New password",
+    "requiredNewPassword": "New password is required",
+    "newPasswordMinLength": "New password should be at least 8 characters",
+    "newPasswordPattern": "Password must contain at least one capital letter, one special character and one number",
+    "confirmPasswordPlaceholder": "Confirm password",
+    "passMatchError": "Passwords don't match!",
+    "saveButton": "Save",
+    "headerTitle": "Change password"
+  },
+  "errors": {
+    "invalidBranchName": "Invalid Branch name",
+    "invalidAddressZipCode": "Invalid Zip Code",
+    "invalidAddress": "Invalid Address",
+    "invalidPhoneNumber": "Invalid Phone number",
+    "invalidContactName": "Invalid Contact Name",
+    "invalidTitle": "Invalid Title",
+    "invalidEmail": "Invalid Email",
+    "invalidPassword": "Invalid Password",
+    "invalidFirstName": "Invalid First Name",
+    "invalidLastName": "Invalid Last Name",
+    "invalidBusinessName": "Invalid Business name",
+    "invalidAdName": "Invalid ad name",
+    "invalidAdCategory": "Invalid category",
+    "invalidAdContent": "Invalid content",
+    "invalidAdDisclaimer": "Invalid disclaimer",
+    "invalidAdPlacement": "Invalid placement",
+    "cardTokenError": "Error during credit card validation, please try again",
+    "creditCardNotSet": "You don't have a credit card charged",
+    "loginError": "Invalid password or email",
+    "adsOverlapped": "The date range is overlapped",
+    "invalidRotation": "Invalid rotation date",
+    "thereIsNoAdInRotationError": "There is no ad in rotation"
+  },
+  "enableGPSModal": {
+    "title": "Location error!",
+    "body": "Enable Location Services in 'Settings' to find nonprofits near your position."
+  },
+  "connectionErrorModal": {
+    "title": "No internet Connection",
+    "body": "Check your internet connection and try again"
+  },
+  "gpsModal": {
+    "msg": "Failed to automatically set Location Mode to 'High Accuracy'. Would you like to switch to the Location Settings page and do this manually?"
+  },
+  "editLocationModal": {
+    "title": "Action denied!",
+    "body": "You can't edit/remove a location that is in an active ad."
+  },
+  "removeLocationModal": {
+    "title": "Something was wrong!",
+    "body": "An error has occurred. Try again latter."
+  },
+  "other": {
+    "terms": "Terms and Conditions",
+    "termsLink": "http://www.mvplocal.com",
+    "about": "About mvplocal",
+    "aboutLink": "http://www.mvplocal.com/about",
+    "privacy": "Privacy & policy",
+    "privacyLink": "http://www.mvplocal.com/privacy",
+    "support": "Support",
+    "supportLink": "http://support.mvplocal.com/"
+  },
+  "share": {
+    "message": "Affordable mobile advertising for small businesses - a donation platform. Download the app:",
+    "subject": "Join the community – Advertising with a Purpose",
+    "chooseApp": "Pick an app"
+  }
+}

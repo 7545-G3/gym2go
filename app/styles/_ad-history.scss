@@ -1,0 +1,114 @@
+@import "variables";
+
+.ad-history {
+  overflow-y: scroll;
+  .membership-description {
+    margin: 0 1em
+  }
+  .ads {
+    margin: {
+      right: 1em;
+      left: 1em;
+    }
+    overflow-y: scroll;
+
+    .adItem {
+      align-items: center;
+      display: flex;
+      padding: 1.3em 0;
+      border-bottom: 1px solid transparentize($main-color, 0.5);
+
+      &:first-child {
+        padding-top: 1em
+      }
+
+      &:last-child {
+        border-bottom: 0
+      }
+
+      .npStatusIcon > img {
+        height: 90px
+      }
+
+      .npDesc {
+        flex: 1;
+        font-size: 1em
+      }
+      .npActions {
+        flex-flow: column;
+        display: flex;
+        justify-content: space-around
+      }
+
+      .circle {
+        width: 3em;
+        height: 3em;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        &.green {
+          background-color: $main-color;
+          img {
+            width: 2em
+          }
+        }
+      }
+    }
+  }
+  .date-filter {
+    padding: .5em .5em;
+    background-color: #ebebec;
+    display: flex;
+
+    > div {
+      color: $light-gray;
+      flex: 1;
+      position: relative;
+
+      input {
+        font-family: Avenir Light;
+        z-index: 0
+      }
+    }
+
+    // Manually position calendar when screen too small
+    @media (max-width: 450px) {
+      #endDateCalendar {
+        position: absolute;
+        bottom: 0;
+        left: -65px;
+      }
+    }
+
+    @import "_customDatepicker";
+    .commonInput {
+      background-color: white
+    }
+    button {
+      width: 5em;
+      height: 2em;
+      margin-top: 0.1em
+    }
+    .input-group {
+      border: none;
+      input {
+        border-radius: 5px
+      }
+    }
+    .form-control {
+      height: 1.5em
+    }
+  }
+  .empty-list {
+    margin-top: 1em
+  }
+}
+
+.ad-history::-webkit-scrollbar {
+  display: none;
+}
+
+.ads::-webkit-scrollbar {
+  display: none;
+}

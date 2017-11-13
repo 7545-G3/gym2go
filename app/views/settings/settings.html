@@ -1,0 +1,19 @@
+<div id="settingsPage" class="pageStyle">
+  <mvp-action-bar
+    title="{{'settings.headerTitle' | i18n}}"
+    platform="{{ settings.platform }}"
+    back-button-enabled="{{ settings.state.current.data.backButtonEnabled }}"
+    back-state="{{ settings.state.current.data.backState }}">
+  </mvp-action-bar>
+  <div class="options">
+    <div class="option" ng-click="settings.logout()">
+      <a class="fs-20 fc-light-gray">{{'settings.logout' | i18n}}</a>
+      <span class="pull-right glyphicon glyphicon-menu-right icon fs-25 fc-light-gray"></span>
+    </div>
+    <div class="button-container">
+      <button type="submit" class="btn btn-success col-xs-12 m-top-xs-10 ng-binding" ng-click="settings.share()">
+        <strong>{{'settings.share' | i18n}}</strong>
+      </button>
+    </div>
+  </div>
+</div>

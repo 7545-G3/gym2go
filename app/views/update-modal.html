@@ -1,0 +1,15 @@
+<div class="modal-header">
+  <div class="modal-title">{{modalCtrl.data.title}}</div>
+</div>
+<div class="modal-body">
+  {{modalCtrl.data.body}}
+</div>
+<div class="modal-footer connection-error recommended-update">
+  <button class="btn btn-success pull-right col-xs-12 fs-15" ng-click="modalCtrl.goToStore()">
+    <strong>Go to store</strong>
+  </button>
+  <button class="btn btn-danger pull-right col-xs-12 fs-15" ng-click="modalCtrl.close()"
+          ng-show="modalCtrl.data.recommendedUpdate && !modalCtrl.data.requiredUpdate">
+    <strong>Ignore</strong>
+  </button>
+</div>

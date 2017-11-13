@@ -1,0 +1,20 @@
+<div class="np-description">
+  <div class="npStatusIcon">
+    <img src="images/marker_green.png" ng-show="status == 'active'">
+    <img src="images/marker_black.png" ng-show="status == 'inactive'">
+    <img src="images/marker_grey.png" ng-show="status == 'opportunity'">
+  </div>
+  <div class="npDesc">
+    <div>
+      <span class="bold ng-binding">{{name}}</span>
+    </div>
+    <div>
+      <span class="regular">{{"dashboard.shared.npItem.distance" | i18n}}:</span>
+      <span class="distance">{{distance}} Mi.</span>
+    </div>
+    <div>
+      <span class="regular">{{"dashboard.shared.npItem.status" | i18n}}</span>
+      <span class="{{status}} capitalize">{{status}}</span>
+    </div>
+  </div>
+</div>

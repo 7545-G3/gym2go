@@ -1,0 +1,83 @@
+@import "variables";
+
+.tutorial {
+  background-color: $background;
+  .skip-button {
+    width: auto;
+    position: absolute;
+    top: 0;
+    right: 0;
+    color: white;
+    font-size: 1.5em;
+    margin: {
+      right: 1em;
+      top: 1em
+    }
+  }
+  .tutorial-carousel {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    text-align: center;
+    .layer {
+      color: white;
+      background-size: contain;
+      height: 100%;
+      width: 100%;
+      margin-top: 2em;
+      background: {
+        repeat: no-repeat;
+        position-x: center;
+      }
+      &.np {
+        background-image: url(../images/tutorial1.png);
+      }
+      &.purchase {
+        background-image: url(../images/tutorial2.png);
+      }
+      &.creating-ads {
+        background-image: url(../images/tutorial3.png);
+      }
+      &.manage-ads {
+        background-image: url(../images/tutorial4.png);
+      }
+    }
+    ul {
+      width: 100%;
+      height: 32em;
+      li {
+        display: flex !important;
+        flex-direction: column;
+        align-items: center;
+        .title {
+          color: $main-color;
+          font-family: "Avenir Bold";
+          font-size: 2em;
+          margin: {
+            bottom: 0.5em;
+            top: 1em
+          }
+        }
+        .description {
+          color: white;
+          font-size: 1em;
+          font-family: "Avenir Light";
+          text-align: center;
+          width: 60%;
+          margin-bottom: 1em
+        }
+      }
+    }
+    .tutorial-indicators {
+      font-size: 2em;
+      margin-top: 0.5em;
+      span {
+        color: white;
+        &.active {
+          color: $main-color;
+        }
+        margin-right: .3em;
+      }
+    }
+  }
+}

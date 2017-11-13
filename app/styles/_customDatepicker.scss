@@ -1,0 +1,29 @@
+.customDatepicker {
+  // ._720kb-datepicker-calendar-day{
+  //   color: inherit;
+  //   &._720kb-datepicker-disabled{
+  //     color: rgba(0,0,0,.2);
+  //   }
+  // }
+  ._720kb-datepicker-calendar-header {
+    background-color: $background;
+    font-family: Avenir Light;
+    a {
+      text-decoration: none;
+      color: white;
+      &._720kb-datepicker-disabled {
+        color: grey;
+      }
+    }
+    ._720kb-datepicker-calendar-header-middle span {
+      color: $main-color;
+    }
+  }
+  ._720kb-datepicker-calendar-days-header {
+    background-color: $light-gray;
+    >div {
+      font-family: Avenir Light;
+      color: white;
+    }
+  }
+}

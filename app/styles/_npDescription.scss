@@ -1,0 +1,17 @@
+@import "variables";
+
+.np-description {
+  display: flex;
+  padding: 20px 0px;
+  border-bottom: 2px solid transparentize($main-color, 0.5);
+
+  .npStatusIcon > img {
+    height: 90px;
+  }
+
+  .npDesc {
+    padding: 10px 10px 0 20px;
+    flex: 1;
+    font-size: 16px;
+  }
+}

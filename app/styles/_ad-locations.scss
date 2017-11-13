@@ -1,0 +1,26 @@
+.adLocations {
+  .title {
+    font-family: Avenir Regular;
+    font-size: 1.5em;
+    margin-top: 0.5em;
+  }
+
+  .np-list .npItem .npStatusIcon {
+    > img {
+      height: auto;
+      width: 2.85em;
+      margin-top: 5px;
+    }
+  }
+
+  .button-container{
+    margin: 1.1em;
+    padding-left: 3em;
+    padding-right: 3em;
+
+    button{
+      font-family: Avenir Roman Bold;
+      padding-top: 8px;
+    }
+  }
+}

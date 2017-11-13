@@ -1,0 +1,56 @@
+<div class=np-map>
+  <ng-map
+    class="ng-map"
+    zoom="8"
+    on-bounds_changed="npMap.onBoundsChanged()">
+    <button class="mvpNavbarButton" ui-sref="dashboard.find-np.list">Go to list</button>
+    <marker
+      ng-repeat="marker in npMap.markers"
+      id="{{ marker.id }}"
+      position="{{ marker.position }}"
+      icon="{{ marker.icon }}"
+      on-click="npMap.showMarkerDetail(event, marker)">
+    </marker>
+    <info-window id="npInfo" max-width="400">
+      <div ng-non-bindable>
+        <div class="npContainer">
+          <div class="npDesc">
+            <div>
+              <span class="bold">{{ npMap.infoWindow.name }}</span>
+            </div>
+            <div>
+              <span class="regular">Distance:</span>
+              <span>{{ npMap.infoWindow.distance }} Miles</span>
+            </div>
+            <div>
+              <span class="regular">Status:</span>
+              <span class="{{ npMap.infoWindow.status }} capitalize">{{ npMap.infoWindow.status }}</span>
+            </div>
+            <div>
+              <span class="directions"><a href="{{ npMap.infoWindow.mapHref }}">{{"dashboard.shared.npItem.getDirections" | i18n}}</a></span>
+            </div>
+          </div>
+          <div class="npActions">
+            <div class="greenCircle"
+                 ng-click="npMap.goToPurchase(npMap.infoWindow, 'purchase')"
+                 ng-show="npMap.infoWindow.status == 'opportunity'">
+              <img src="images/purchase_selected.png" style="padding-right: 1px;">
+            </div>
+            <div class="greenCircle" ng-show="npMap.infoWindow.status == 'inactive'"
+                 ng-click="npMap.goToPurchase(npMap.infoWindow, 'renew')">
+              <img src="images/refresh.png" style="padding-right: 1px;">
+            </div>
+            <div class="greenCircle" ng-show="npMap.infoWindow.status == 'inactive'"
+                 ng-click="npMap.goToHistory(npMap.infoWindow)">
+              <img src="images/history_selected.png" style="padding-top: 3px; padding-left: 1px;">
+            </div>
+            <div class="greenCircle" ng-show="npMap.infoWindow.status == 'active'"
+                 ng-click="npMap.goToManageMembership(npMap.infoWindow)">
+              <img src="images/manage_selected.png">
+            </div>
+          </div>
+        </div>
+      </div>
+    </info-window>
+  </ng-map>
+</div>

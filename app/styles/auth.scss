@@ -1,0 +1,156 @@
+@import "variables";
+
+#authPage {
+  background-color: $background;
+
+  .commonForm input {
+    color: $light-gray;
+  }
+
+  .initialWelcome, .slide2 {
+    .layer {
+      background-color: $background;
+      min-width: 100%;
+      min-height: 50px;
+      height: 50%;
+      position: relative;
+    }
+  }
+
+  .initialWelcome {
+    .logo {
+      background-image: url('../images/logo.png');
+      background-size: contain;
+      background-repeat: no-repeat;
+      width: 55px;
+      height: 70px;
+      display: block;
+      margin: 0 auto;
+    }
+    .text1 {
+      position: absolute;
+      margin: 0 auto;
+      left: 0;
+      right: 0;
+      top: 20%;
+    }
+  }
+
+  .slide2 {
+    .text2 {
+      position: absolute;
+      margin: 0 auto;
+      left: 0;
+      right: 0;
+      top: -50px;
+    }
+  }
+
+  .title {
+    width: auto;
+    display: inline-block;
+    font-size: 40px;
+    font-family: Avenir Light;
+    .logo {
+      background-image: url("../images/mvplocal_logo.png");
+      background-size: contain;
+      background-repeat: no-repeat;
+      width: 160px;
+      height: 50px;
+      margin-bottom: 16px;
+    }
+  }
+
+  .commonForm {
+    button {
+      margin-top: 15px
+    }
+    .icon {
+      float: left;
+      &.user {
+        background-image: url('../images/user.png');
+        width: 20px;
+        height: 20px;
+      }
+      &.password {
+        background-image: url('../images/lock.png');
+        width: 20px;
+        height: 27px;
+      }
+      &.business {
+        background-image: url('../images/business.png');
+        width: 22px;
+        height: 26px;
+      }
+      &.phone {
+        background-image: url('../images/phone.png');
+        width: 20px;
+        height: 27px;
+      }
+      &.email {
+        background-image: url('../images/mail.png');
+        width: 20px;
+        height: 27px;
+      }
+      &.ok {
+        background-image: url('../images/ok.png');
+        width: 22px;
+        height: 27px;
+      }
+    }
+  }
+
+  //ANIMATIONS!
+  .box {
+    width: 50px;
+    height: 50px;
+    position: relative;
+    border-radius: 6px;
+    margin-top: 4px;
+    display: inline-block
+  }
+
+  .green {
+    background-color: #6fb936;
+  }
+
+  .orange {
+    background-color: #f38630;
+  }
+  .grey {
+    background-color: #989898;
+  }
+
+  .text {
+    position: relative;
+  }
+
+  // Media query for initial animation on landscape
+  @media only screen and (max-device-height: 400px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: landscape) {
+    .fs-30 {
+      font-size: 1.2em;
+    }
+    .fs-40 {
+      font-size: 2em;
+    }
+    .fs-50 {
+      font-size: 2.3em;
+    }
+    .fs-60 {
+      font-size: 3em;
+    }
+    .initialWelcome .text1 {
+      top: 35%;
+    }
+    .slide2 {
+      .text2 {
+        top: -20px;
+      }
+      .layer {
+        height: 65px;
+      }
+    }
+  }
+}
+
+

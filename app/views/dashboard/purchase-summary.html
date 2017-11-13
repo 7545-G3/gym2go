@@ -1,0 +1,63 @@
+<div ui-view class="membership purchase-summary">
+  <np-description ng-show="!summaryCtrl.isInBilling()"
+                  name={{summaryCtrl.np.name}}
+                  distance={{summaryCtrl.np.distance}}
+                  status={{summaryCtrl.np.status}}>
+  </np-description>
+  <div class="np-description" ng-show="summaryCtrl.isInBilling()">
+    <div class="npStatusIcon">
+      <img src="images/marker_green.png" ng-show="summaryCtrl.np.status == 'active'">
+      <img src="images/marker_black.png" ng-show="summaryCtrl.np.status == 'inactive'">
+    </div>
+    <div class="npDesc" style="padding: 0 10px 0 20px;">
+      <div>
+        <span class="bold ng-binding">{{summaryCtrl.np.name}}</span>
+      </div>
+      <div>
+        <span class="regular">{{ summaryCtrl.np.shipping_city +", "+ summaryCtrl.np.shipping_state }}</span>
+      </div>
+      <div>
+        <span class="regular">{{"dashboard.shared.npItem.memberPlan" | i18n}}:</span>
+        <span class="distance {{summaryCtrl.np.status}}">{{summaryCtrl.currentPlan.name}}</span>
+      </div>
+      <div>
+        <span class="regular">{{"dashboard.shared.npItem.status" | i18n}}:</span>
+        <span class="{{summaryCtrl.np.status}} capitalize">{{summaryCtrl.np.status}}</span>
+      </div>
+      <div>
+        <span class="regular">{{"dashboard.billing.summary.renewalDate" | i18n}}:</span>
+        <span class="{{summaryCtrl.np.status}} capitalize">{{summaryCtrl.renewalDate | date:'MM/dd/yyyy'}}</span>
+      </div>
+      <div>
+        <span class="regular">{{"dashboard.billing.summary.autoRenewal" | i18n}}:</span>
+        <span class="{{summaryCtrl.np.status}} capitalize">{{summaryCtrl.membership.auto_renew ? 'Yes' : 'No'}}</span>
+      </div>
+    </div>
+  </div>
+  <div class="billing-info">
+    <div class="credit-card">
+      {{"dashboard.billing.summary.transactionDate" | i18n}}:
+      <span>{{summaryCtrl.transactionDate | date:'MM/dd/yyyy'}}</span>
+    </div>
+    <div class="credit-card">
+      {{"dashboard.billing.summary.transactionStatus" | i18n}}: <span class="capitalize">{{summaryCtrl.billingInfo.status ? summaryCtrl.billingInfo.status : 'success'}}</span>
+    </div>
+    <div class="credit-card">
+      {{"dashboard.billing.summary.creditCard" | i18n}}: <span>{{summaryCtrl.creditCard.brand + ' ' + summaryCtrl.creditCard.masked_number}}</span>
+    </div>
+    <div class="credit-card">
+      {{"dashboard.billing.summary.expiration" | i18n}}: <span>{{summaryCtrl.creditCard.expiration_date}}</span>
+    </div>
+  </div>
+  <purchase-info
+    price={{summaryCtrl.currentPlan.monthly_price}}
+    discount={{summaryCtrl.currentPlan.discount}}
+    purchase-price={{summaryCtrl.purchasePrice}}
+    donation-amount={{summaryCtrl.donationAmount}}>
+  </purchase-info>
+  <div class="buttons" ng-show="!summaryCtrl.isInBilling()">
+    <button type="submit" class="btn btn-success pull-right col-xs-12 fs-15" ui-sref="dashboard.manage.membership">
+      <strong>{{"dashboard.billing.summary.startButton" | i18n}}</strong>
+    </button>
+  </div>
+</div>

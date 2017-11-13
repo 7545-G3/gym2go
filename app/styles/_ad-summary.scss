@@ -1,0 +1,127 @@
+@import "variables";
+
+.ad-summary {
+  overflow-y: scroll;
+  .membership-description {
+    margin: 0 1em
+  }
+  .adItem {
+    margin: {
+      right: 1em;
+      left: 1em;
+    }
+    align-items: center;
+    display: flex;
+    padding: 1.3em 0;
+    &:first-child {
+      padding-top: 1em
+    }
+    &:last-child {
+      border-bottom: 0
+    }
+    .npStatusIcon > img {
+      height: 90px
+    }
+    .npDesc {
+      flex: 1;
+      font-size: 1em
+    }
+  }
+  .info-tabs {
+    color: #585858;
+    background-color: #cccccc;
+    border-bottom: 5px solid #585858;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    div {
+      width: 50%;
+      height: 100%;
+      text-align: center;
+      line-height: 3em;
+      &.active {
+        color: white;
+        background-color: #585858
+      }
+    }
+  }
+  .ad-data {
+    margin: {
+      left: 1em;
+      right: 1em
+    }
+    .item {
+      align-items: center;
+      display: flex;
+      height: 3em;
+      border-bottom: 1px solid transparentize($main-color, 0.8);
+      &:last-child {
+        border-bottom: 0
+      }
+    }
+    span {
+      margin: {
+        left: .5em;
+        top: .3em
+      }
+    }
+    .icon {
+      width: 2em;
+      height: 2em
+    }
+    .views-icon {
+      background: url(../images/views_icon.png) center center/cover no-repeat;
+      background-size: 2em 1.4em
+    }
+    .likes-icon {
+      background: url(../images/likes_icon.png) center center / cover no-repeat;
+      background-size: 2em 1.7em
+    }
+    .share-icon {
+      background: url(../images/share_icon.png) center center / cover no-repeat;
+      background-size: 2em 2em
+    }
+    .earth-icon {
+      background: url(../images/earth_icon.png) center center / cover no-repeat;
+      background-size: 2em 2em
+    }
+  }
+  .ad-details {
+    margin-left: 1em;
+    margin-right: 1em;
+    .item {
+      padding: {
+        bottom: .5em;
+        top: .5em
+      }
+      line-height: 1.7;
+      display: flex;
+      flex-direction: column;
+      border-bottom: 1px solid transparentize($main-color, 0.8);
+      &:last-child {
+        border-bottom: 0
+      }
+      .location-item {
+        display: flex;
+        align-items: center;
+        margin-bottom: 1em;
+        span {
+          margin-left: .5em
+        }
+        .icon {
+          width: 2em;
+          height: 2em
+        }
+        .store-icon {
+          background: url(../images/shop.png) center center / cover no-repeat;
+          background-size: 1.5em 1.5em
+        }
+      }
+    }
+  }
+}
+
+.ad-summary::-webkit-scrollbar {
+  display: none
+}

@@ -1,0 +1,53 @@
+<div class="fs-15 fc-green m-bottom-xs-20 text-center" ng-show="login.fromResetPassword">
+  Your password has been successfully changed.
+</div>
+
+<form class="commonForm col-xs-12" name="loginForm" novalidate ng-submit="login.login()">
+  <fieldset class="form-group" ng-class="{'has-error': loginForm.email.$invalid && loginForm.email.$touched}">
+    <div class="input-group">
+      <div class="input-group-addon fs-20 p-left-xs-0"><i class="icon user"></i></div>
+      <input type="email" class="form-control m-top-xs-5" ng-model="login.email" name="email"
+             placeholder="{{'login.emailPlaceholder' | i18n}}"
+             autocapitalize="none" required>
+    </div>
+    <div ng-messages="loginForm.email.$error" ng-show="loginForm.email.$touched && loginForm.email.$error" role="alert"
+         class="ng-messages fs-15">
+      <div ng-message="required"><strong>{{'login.requiredEmail' | i18n}}</strong></div>
+      <div ng-message="email"><strong>{{'login.invalidEmail' | i18n}}</strong></div>
+    </div>
+  </fieldset>
+
+  <fieldset class="form-group m-top-xs-20"
+            ng-class="{'has-error': loginForm.password.$invalid && loginForm.password.$touched}">
+    <div class="input-group">
+      <div class="input-group-addon fs-20 p-left-xs-0"><i class="icon password"></i></div>
+      <input type="password" class="form-control m-top-xs-5" ng-model="login.password"
+             ng-focus="login.clearError('login_error')" name="password"
+             placeholder="{{'login.passwordPlaceholder' | i18n}}" ng-minlength="8" required>
+    </div>
+    <div ng-messages="loginForm.password.$error" ng-show="loginForm.password.$touched && loginForm.password.$error"
+         role="alert" class="ng-messages fs-15">
+      <div ng-message="required"><strong>{{'login.requiredPassword' | i18n}}</strong></div>
+      <div ng-message="minlength"><strong>{{'login.invalidPassword' | i18n}}</strong></div>
+    </div>
+  </fieldset>
+
+  <div ng-show="login.errorMessages['login_error']"
+       class="ng-messages fs-15 ng-active">
+    <div class="ng-scope"><strong>{{ login.errorMessages['login_error'] }}</strong></div>
+  </div>
+
+  <fieldset class="form-group text-center fs-15 m-top-xs-40 m-bottom-xs-0">
+    <a class="col-sm-12 fc-green" ui-sref="auth.forgotPassword"><strong>{{'login.forgotPassword' | i18n}}</strong></a>
+  </fieldset>
+
+  <fieldset class="form-group m-top-xs-10">
+    <button type="submit" class="btn btn-success pull-right col-xs-12 fs-15" ng-disabled="loginForm.$invalid">
+      <strong>{{'login.loginButton' | i18n}}</strong></button>
+  </fieldset>
+
+  <div class="m-top-xs-20 fc-green text-center">
+    <a href="{{'other.termsLink' | i18n}}">{{'other.terms' | i18n}}</a>
+  </div>
+
+</form>

@@ -1,0 +1,29 @@
+@import "variables";
+
+.purchase-info {
+  margin-top: 1.5em;
+  margin-bottom: 1.5em;
+  width: 100%;
+  text-align: center;
+  font-size: 1.15em;
+  border: 1px solid black;
+
+  .header-info {
+    font-weight: bold;
+    background: $background;
+    color: white;
+    height: 2em;
+    line-height: 2em;
+  }
+
+  .summary {
+    padding: 1em 1em;
+    .item {
+      height: 1.5em;
+      line-height: 1.5em
+    }
+    span {
+      color: $main-color
+    }
+  }
+}

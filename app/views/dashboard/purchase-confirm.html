@@ -1,0 +1,37 @@
+<div ui-view class="membership confirm-purchase">
+  <np-description
+    name={{confirmCtrl.np.name}}
+    distance={{confirmCtrl.np.distance}}
+    status={{confirmCtrl.np.status}}>
+  </np-description>
+  <div class="billing-info">
+    <div class="credit-card">
+      {{"dashboard.shared.npItem.memberPlan" | i18n}}: <span>{{confirmCtrl.currentPlan.name}}</span>
+    </div>
+    <div class="credit-card">
+      {{"dashboard.purchase.confirmPurchase.renewalDate" | i18n}}: <span>{{confirmCtrl.renewalDate | date:'MM/dd/yyyy'}}</span>
+    </div>
+    <div class="credit-card">
+      {{"dashboard.purchase.confirmPurchase.autoRenewal" | i18n}}: <span>{{confirmCtrl.autoRenew}}</span>
+    </div>
+  </div>
+  <purchase-info
+    price={{confirmCtrl.currentPlan.monthly_price}}
+    discount={{confirmCtrl.currentPlan.discount}}
+    purchase-price={{confirmCtrl.purchasePrice}}
+    donation-amount={{confirmCtrl.donationAmount}}>
+  </purchase-info>
+  <div ng-show="confirmCtrl.errorMessages['credit_card_not_set']"
+       class="ng-messages fs-15 ng-active">
+    <div class="ng-scope"><strong>{{ confirmCtrl.errorMessages['credit_card_not_set'] }}</strong></div>
+  </div>
+  <div class="buttons">
+    <button type="submit" class="btn btn-success pull-right col-xs-12 fs-15" ng-click="confirmCtrl.doPurchase()">
+      <strong>{{"dashboard.purchase.confirmPurchase.confirmButton" | i18n}}</strong>
+    </button>
+    <button type="submit" class="btn btn-danger pull-right col-xs-12 fs-15" ng-click="confirmCtrl.cancelPurchase()">
+      <strong>{{"dashboard.purchase.confirmPurchase.cancelButton" | i18n}}</strong>
+    </button>
+  </div>
+
+</div>

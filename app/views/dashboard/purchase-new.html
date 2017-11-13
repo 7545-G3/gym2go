@@ -1,0 +1,49 @@
+<div class="membership">
+  <np-description
+    name={{purchase.np.name}}
+    distance={{purchase.np.distance}}
+    status={{purchase.np.status}}>
+  </np-description>
+  <div class="billing-info">
+    <div class="card-info">
+      <div class="credit-card">
+        {{"dashboard.purchase.newPurchase.creditCard" | i18n}}: <span ng-show="!purchase.busy">{{purchase.creditCardData.brand + ' ' + purchase.creditCardData.masked_number}}</span>
+      </div>
+      <div class="expiration-date">
+        {{"dashboard.purchase.newPurchase.expiration" | i18n}}: <span ng-show="!purchase.busy">{{purchase.creditCardData.expiration_date}}</span>
+      </div>
+    </div>
+    <div class="edit-billing-info" ng-click="purchase.goToEdit()"></div>
+  </div>
+  <div class="settings plans">
+    <label class="title" for="plans">{{"dashboard.purchase.newPurchase.choosePlan" | i18n}}</label>
+    <select class="form-control" ng-options="plan.name for plan in purchase.plans track by plan._id"
+            ng-model="purchase.currentPlan" ng-change="purchase.update()" id="plans">
+    </select>
+  </div>
+  <div class="settings purchase-options">
+    <label class="title">{{"dashboard.purchase.newPurchase.purchaseOptions" | i18n}}</label>
+    <div class="purchase-selection">
+      <div class="price">{{purchase.currentPlan.monthly_price | currency}}/{{"dashboard.purchase.newPurchase.month" | i18n}}</div>
+      <div class="switch-content">
+        <div class="switch-label">{{"dashboard.purchase.newPurchase.autoRenew" | i18n}}</div>
+        <form>
+          <switch id="enabled" name="enabled" ng-model="purchase.isAutoRenew" class="green"></switch>
+        </form>
+      </div>
+    </div>
+  </div>
+  <purchase-info
+    price={{purchase.currentPlan.monthly_price}}
+    discount={{purchase.currentPlan.discount}}
+    purchase-price={{purchase.purchasePrice}}
+    donation-amount={{purchase.donationAmount}}>
+  </purchase-info>
+  <fieldset class="form-group m-top-xs-10">
+    <button type="submit" class="btn btn-success pull-right col-xs-12 fs-15" ng-click="purchase.saveData()"
+            ui-sref='dashboard.purchase.confirm'>
+      <strong>{{"dashboard.purchase.newPurchase.nextButton" | i18n}}</strong></button>
+  </fieldset>
+  <api-messages errors="purchase.messages"></api-messages>
+
+</div>

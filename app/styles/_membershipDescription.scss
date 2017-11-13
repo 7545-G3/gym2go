@@ -1,0 +1,29 @@
+@import "variables";
+
+.membership-description {
+  display: flex;
+  padding: 20px 0;
+  margin-bottom: 1em;
+  border-bottom: 2px solid transparentize($main-color, 0.5);
+
+  .npStatusIcon > img{
+    height: 90px;
+  }
+
+  .npDesc {
+    padding: 10px 10px 0 20px;
+    flex: 1;
+    font-size: 16px;
+    button {
+      margin-top: 1em;
+      font-family: Avenir Roman Bold;
+      height: 2em;
+      line-height: 1;
+      padding: 0 !important;
+      span {
+        padding: 0 !important;
+        font-size: 0.9em;
+      }
+    }
+  }
+}
